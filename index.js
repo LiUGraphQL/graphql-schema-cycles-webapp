@@ -6,7 +6,6 @@ function findCyclesMain() {
     var schema = document.getElementById("schema_text").value;
 
     const jsObj = convert(schema);
-
     const graph = convertToGraph(jsObj);
 
     const res = detectCycles(graph, find_just_one_cycle);
@@ -20,7 +19,7 @@ function findCyclesMain() {
 
     document.getElementById("enumerated_cycles").value = "";
 
-    for( var sc in res.cycles) {
+/*    for( var sc in res.cycles) {
     var string = "{ ";
 	for ( var vert in res.cycles[sc] ) {
 	    string += res.cycles[sc][vert]["vertex"].vertexID;
@@ -29,6 +28,24 @@ function findCyclesMain() {
 	    string += ", ";
 	}
 	string = string.slice(0,-4);
+	string += " }";
+	document.getElementById("enumerated_cycles").value += string + "\n";
+	}*/
+
+    for( var sc in res.cycles) {
+	var string = "{ ";
+	for ( var vert in res.cycles[sc] ) {
+	    string += res.cycles[sc][vert]["vertex"].vertexID;
+	    if( res.cycles[sc][vert]["refLabel"] === "#interface_ref") {
+		string += " <~implements~ ";
+	    }
+	    else if (res.cycles[sc][vert]["refLabel"] === "#union_ref") {
+		string += " -union-> ";
+	    }
+	    else string += " -[" + res.cycles[sc][vert]["refLabel"] + "]-> ";
+	    //string += ", ";
+	}
+	string = string.slice(0,-7);
 	string += " }";
 	document.getElementById("enumerated_cycles").value += string + "\n";
     }
