@@ -10,17 +10,17 @@
     <script src="graphql-to-json-converter/lib/lexer.js"></script>
     <script src="graphql-to-json-converter/lib/parser.js"></script>
 
-    <script src="src/graphify.js"></script>
-    <script src="src/detectCycles.js"></script>
+    <script src="graphql-schema-cycles/src/graphify.js"></script>
+    <script src="graphql-schema-cycles/src/detectCycles.js"></script>
 
 
   </head>
   <body>
 
-    <div id="top_bar">
-      <div id="top_bar_main">
-
-      </div>
+    <div class="top_bar">
+      <topref href="#home">Home</topref>
+      <topref href="#news">News</topref>
+      <topref href="#contact">Contact</topref>
     </div>
 
     <div id="main_content_container">
@@ -37,7 +37,7 @@
 
 	<div id="main_right_content">
 	  <div id="cycles_enumeration_content">
-	    <textarea spellcheck="false" id="enumerated_cycles"></textarea>
+	    <textarea spellcheck="false" id="enumerated_cycles" readonly="true"></textarea>
 	  </div>
 	  <div id="button_and_settings_content">
 	    <input id="enumerate_all" type="checkbox"> <B> Enumerate all cycles </B> </input>
