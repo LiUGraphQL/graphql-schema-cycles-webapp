@@ -1,0 +1,65 @@
+<!DOCTYPE HTML SYSTEM>
+<meta charset="UTF-8">
+<html>
+  <head>
+    <link href="css/cycles.css" type="text/css" rel="stylesheet"></link>
+    <script src="index.js"></script>
+
+    <script src="graphql-to-json-converter/lib/converter.js"></script>
+    <script src="graphql-to-json-converter/lib/CustomObject.js"></script>
+    <script src="graphql-to-json-converter/lib/lexer.js"></script>
+    <script src="graphql-to-json-converter/lib/parser.js"></script>
+
+    <script src="src/graphify.js"></script>
+    <script src="src/detectCycles.js"></script>
+
+
+  </head>
+  <body>
+
+    <div id="top_bar">
+      <div id="top_bar_main">
+
+      </div>
+    </div>
+
+    <div id="main_content_container">
+
+      <div id="main_content_top_border">
+	<label id="label_main_container"> <B> Input you GraphQL schema here: </B>  </label>
+	<label id="label_output"> <B> </B>  </label>
+      </div>
+
+      <div class="banner"> </div>
+
+      <div id="main_content">
+	<textarea spellcheck="false" id="schema_text"></textarea>
+
+	<div id="main_right_content">
+	  <div id="cycles_enumeration_content">
+	    <textarea spellcheck="false" id="enumerated_cycles"></textarea>
+	  </div>
+	  <div id="button_and_settings_content">
+	    <input id="enumerate_all" type="checkbox"> <B> Enumerate all cycles </B> </input>
+	    <label for="enumerate_all"> <B> Enumerate all cycles </B> </label>
+	    <!--<button id="start_button" onclick="run_main()"> Run </button>-->
+	    <button id="start_button" onclick="findCyclesMain()"> Run </button>
+  	  </div>
+	</div>
+
+
+      </div>
+
+      <div class="banner"> </div>
+
+    </div>
+
+
+
+
+    <script type="text/view" id="mainview">
+
+    </script>
+
+  </body>
+</html>

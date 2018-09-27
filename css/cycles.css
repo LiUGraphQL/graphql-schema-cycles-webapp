@@ -1,0 +1,145 @@
+body
+{
+  background-color: #000000 ;
+}
+
+#top_bar
+{
+    background-color: white;
+    width:100%;
+    height:8%;
+}
+
+#top_bar_main
+{
+    float:left;
+    background-color: green;
+    width: 100%;
+    height: 100%
+}
+
+.top_bar_divider
+{
+    float:left;
+    background-color: white;
+    width: 10%;
+    height: 100%;
+}
+
+#main_content_container
+{
+    background-color: teal;
+    width: 100%;
+    height: 92%;
+}
+
+
+#main_content_top_border
+{
+    width: 100%;
+    height: 10%;
+    background-color: white;
+}
+
+#enumerate_all
+{
+    float:left;
+    margin-top: 20%;
+}
+
+#label_main_container
+{
+    padding-top: 2%;
+    height: 25%;
+    float:left;
+    margin-left: 10%;
+}
+
+#label_output
+{
+    padding-top: 2%;
+    height: 25%;
+    float:left;
+    margin-left: 24%;
+}
+
+
+
+/* green === 008000 */
+
+#main_content
+{
+    background-color: white;
+    height: 90%;
+    width: 80%;
+    float: left;
+}
+
+#schema_text
+{
+    box-shadow: -5px 0px green;
+    background-color: #100000;
+    float:left;
+    width: 50%;
+    height: 90%;
+    resize: none;
+}
+
+#enumerated_cycles
+{
+    box-shadow: -5px 0px green;
+    background-color: #100000;
+    float:left;
+    width: 100%;
+    height: 100%;
+    resize: none;
+}
+
+.banner
+{
+    background-color: white;
+    float:left;
+    height: 90%;
+    width: 10%;
+}
+
+#main_right_content
+{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+#cycles_enumeration_content
+{
+    height: 70%;
+    width: 100%;
+}
+
+#button_and_settings_content
+{
+    box-shadow: 0px -5px green;
+    height: 20%;
+    width: 100%;
+}
+
+#start_button
+{
+    height: auto;
+    width: auto;
+    margin-left: 82%;
+    margin-top: 6%;
+    background-color: green;
+}
+
+/*
+  <div id="active"> </div>
+
+  <div id="top_bar"> </div>
+
+  <div id="left_banner"> </div>
+
+  <div id="main_content"> </div>
+
+  <div id="right_banner"> </div>
+*/
