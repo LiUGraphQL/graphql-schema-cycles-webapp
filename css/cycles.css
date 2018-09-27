@@ -6,15 +6,25 @@ body
 
 .top_bar
 {
-    background-color: green;
+    background-color: #4CAF50;
     position: fixed;
     width:100%;
     height:8%;
 }
 
 .top_bar topref{
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  height: 100%;
+  width: 10%;
+  text-decoration: none;
+}
 
-
+.top_bar topref:hover {
+    background: #ddd;
+    color: white;
 }
 
 .top_bar_divider
@@ -25,11 +35,17 @@ body
     height: 100%;
 }
 
+#top_filler
+{
+  width: 100%;
+  height: 8%;
+}
+
 #main_content_container
 {
     background-color: teal;
     width: 100%;
-    height: 120%;
+    height: 300%;
 }
 
 
@@ -38,12 +54,6 @@ body
     width: 100%;
     height: 10%;
     background-color: white;
-}
-
-#enumerate_all
-{
-    float:left;
-    margin-top: 20%;
 }
 
 #label_main_container
@@ -69,69 +79,106 @@ body
 #main_content
 {
     background-color: white;
-    height: 90%;
+    height: 100%;
     width: 80%;
     float: left;
 }
 
+.introduction_area
+{
+  width: 100%;
+  height: 33%;
+}
+
+.input_area
+{
+  width: 100%;
+  height: 33%;
+}
+
+.result_area
+{
+  width: 100%;
+  height: 34%;
+}
+
+/*box-shadow: -5px 0px green;*/
+
 #schema_text
 {
-    box-shadow: -5px 0px green;
-    background-color: #100000;
-    color: white;
-    float:left;
-    width: 50%;
-    height: 90%;
-    resize: none;
-}
-
-#enumerated_cycles
-{
-    box-shadow: -5px 0px green;
     background-color: #100000;
     color: white;
     float:left;
     width: 100%;
-    height: 100%;
+    height: 55%;
     resize: none;
 }
 
-.banner
+#schema_url
 {
-    background-color: white;
-    float:left;
-    height: 90%;
-    width: 10%;
-}
-
-#main_right_content
-{
-    width: 50%;
-    height: 100%;
-    float: left;
-}
-
-#cycles_enumeration_content
-{
-    height: 70%;
-    width: 100%;
-}
-
-#button_and_settings_content
-{
-    box-shadow: 0px -5px green;
-    height: 20%;
-    width: 100%;
+  background-color: #100000;
+  color: white;
+  float:left;
+  margin-top: 5%;
+  width: 50%;
+  height: 20px;
+  resize: none;
 }
 
 #start_button
 {
-    height: auto;
-    width: auto;
-    margin-left: 82%;
-    margin-top: 6%;
-    background-color: green;
+  float:right;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  margin-top: 3%;
 }
+
+#enumerate_all_label
+{
+  padding-left: 25%;
+  font-size: 25px;
+}
+
+#enumerate_all
+{
+  height: 25px;
+  width: 25px;
+  margin-top: 2%;
+  background-color: #eee;
+}
+
+#run_settings
+{
+  float:left;
+  width: 30%;
+  height: 10%;
+  padding-top: 4.25%;
+}
+
+#enumerated_cycles
+{
+    background-color: #100000;
+    color: white;
+    float:left;
+    width: 100%;
+    height: 55%;
+    resize: none;
+
+}
+.banner
+{
+    background-color: white;
+    float:left;
+    height: 100%;
+    width: 10%;
+}
+
 
 /*
   <div id="active"> </div>
