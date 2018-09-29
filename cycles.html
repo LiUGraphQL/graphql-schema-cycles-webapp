@@ -3,7 +3,9 @@
 <html>
   <head>
     <link href="css/cycles.css" type="text/css" rel="stylesheet"></link>
+    <script src="app_func.js"></script>
     <script src="index.js"></script>
+
 
     <script src="graphql-to-json-converter/lib/converter.js"></script>
     <script src="graphql-to-json-converter/lib/CustomObject.js"></script>
@@ -23,7 +25,6 @@
       <topref href="#contact">Contact</topref>
     </div>
 
-    <div id="top_filler"> </div>
     <div id="main_content_container">
 
       <div class="banner"> </div>
@@ -32,11 +33,17 @@
 
         <!-- ALL CONTENT SHOULD BE HERE -->
 
-        <div class="introduction_area">
-
+        <div id="introduction_area">
+          <div id="logo_padding"></div>
+          <div id="logo"> </div>
+          <button id="intro_button" onclick="go_to_input()"> Get started! </button>
         </div>
 
-        <div class="input_area">
+
+        <div id="input_area">
+            <div class="padding"> </div>
+            <label id="label_input"> Input </label>
+
             <textarea spellcheck="false" id="schema_text"></textarea>
             <textarea spellcheck="false" id="schema_url"></textarea>
             <div id="run_settings">
@@ -45,27 +52,28 @@
             </div>
               <button id="start_button" onclick="findCyclesMain()"> Run </button>
         </div>
-        <div class="result_area">
-          <label id="label_output"> Result </label>
-          <textarea spellcheck="false" id="enumerated_cycles" readonly="true"></textarea>
+
+        <div id="result_area">
         </div>
+
+
       </div>
       <div class="banner"> </div>
 
 	</div>
 
 
-<!--
-    <script id="bois">
-    <textarea spellcheck="false" id="schema_text"></textarea>
- <textarea spellcheck="false" id="enumerated_cycles" readonly="true"></textarea>
-</div>
-   </script
 
--->
+    <script type="text/view" id="hidden_result">
 
-
-    <script type="text/view" id="mainview">
+      <div class="padding"> </div>
+      <div id="result_area_top">
+        <label id="label_output"> Result </label>
+      </div>
+      <div id="result_area_bottom">
+        <textarea spellcheck="false" id="enumerated_cycles" readonly="true"></textarea>
+        <div id="canvas"> </div>
+      </div>
 
     </script>
 

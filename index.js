@@ -1,6 +1,7 @@
 function findCyclesMain() {
 
 
+    enable_result();
     document.getElementById("enumerated_cycles").value = "Calculating...";
     var find_just_one_cycle = !document.getElementById("enumerate_all").checked;
     var schema = document.getElementById("schema_text").value;
