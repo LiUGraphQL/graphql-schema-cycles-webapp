@@ -31,39 +31,6 @@ function findCyclesMain() {
     }
   }
 
-  const res = detectCycles(graph.graph, find_just_one_cycle);
-
-  if(res.foundCycle) {
-    document.getElementById("label_output").textContent = ("Found cycles");
-  }
-  else {
-    document.getElementById("label_output").textContent = ("Found no cycles");
-  }
-
-  document.getElementById("enumerated_cycles").value = "";
-
-
-  // create graph here!
-  for( var sc in res.cycles) {
-    var string = "{ ";
-    for ( var vert in res.cycles[sc] ) {
-      string += res.cycles[sc][vert]["vertex"].vertexID;
-      if( res.cycles[sc][vert]["refLabel"] === "#interface_ref") {
-        string += " <~implements~ ";
-      }
-      else if (res.cycles[sc][vert]["refLabel"] === "#union_ref") {
-        string += " -union-> ";
-      }
-      else string += " -[" + res.cycles[sc][vert]["refLabel"] + "]-> ";
-      //string += ", ";
-    }
-    string = string.slice(0,-7);
-    string += " }";
-    document.getElementById("enumerated_cycles").value += string + "\n";
-  }
-
-  // cytoscape from here and on.
-
   var cy = cytoscape({
     container: document.getElementById('cy'),
 
@@ -110,4 +77,37 @@ function findCyclesMain() {
       padding: 10
     }
   });
+
+
+  const res = detectCycles(graph.graph, find_just_one_cycle);
+
+  if(res.foundCycle) {
+    document.getElementById("label_output").textContent = ("Found cycles");
+  }
+  else {
+    document.getElementById("label_output").textContent = ("Found no cycles");
+  }
+
+  document.getElementById("enumerated_cycles").value = "";
+
+
+  // create graph here!
+  for( var sc in res.cycles) {
+    var string = "{ ";
+    for ( var vert in res.cycles[sc] ) {
+      string += res.cycles[sc][vert]["vertex"].vertexID;
+      if( res.cycles[sc][vert]["refLabel"] === "#interface_ref") {
+        string += " <~implements~ ";
+      }
+      else if (res.cycles[sc][vert]["refLabel"] === "#union_ref") {
+        string += " -union-> ";
+      }
+      else string += " -[" + res.cycles[sc][vert]["refLabel"] + "]-> ";
+      //string += ", ";
+    }
+    string = string.slice(0,-7);
+    string += " }";
+    document.getElementById("enumerated_cycles").value += string + "\n";
+  }
+  // cytoscape from here and on.
 }
