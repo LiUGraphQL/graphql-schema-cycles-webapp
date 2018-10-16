@@ -6,3 +6,7 @@
 	path = graphql-to-json-converter
 	url = https://github.com/LiUGraphQL/graphql-to-json-converter.git
 	branch = web
+[submodule "cytoscape.js"]
+	path = cytoscape.js
+	url = https://github.com/LiUGraphQL/cytoscape.js.git
+	branch = unstable
