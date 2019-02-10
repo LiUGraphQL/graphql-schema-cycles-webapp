@@ -24,8 +24,8 @@ function findCyclesMain() {
     for(var edge in graph.graph[vertex].referenceList)
     {
 
-        var label = graph.graph[vertex].referenceList[edge].label;
-        var referenceID = graph.graph[vertex].referenceList[edge].reference.vertexID;
+      var label = graph.graph[vertex].referenceList[edge].label;
+      var referenceID = graph.graph[vertex].referenceList[edge].reference.vertexID;
 
       _edges.push({data:{id:(incrementedge++)+label, weight:1 ,source:vertex, target:referenceID}});
     }
@@ -62,52 +62,60 @@ function findCyclesMain() {
 
     elements: {
       nodes: _vertices,
-        //{ data: { id: 'a' } },
+      //{ data: { id: 'a' } },
       edges: _edges
-        //{ data: { id: 'a"e', weight: 1, source: 'a', target: 'e' } },
+      //{ data: { id: 'a"e', weight: 1, source: 'a', target: 'e' } },
     },
     styleEnabled : true,
 
     gravity: 1,
-
+    /*
     layout: {
-      name: 'cose',
-      directed: true,
-      roots: '#a',
-      padding: 10
+    name: 'cose',
+    directed: true,
+    roots: '#a',
+    padding: 10,
+  }*/layout: {
+  stop: function () {
+
+  },
+  name: 'cose',
+  animate: 'end',
+  nodeSep: 20, // >>>>>>YOUR TARGET PROPERTY<<<<<<<
+  animationEasing: 'ease-out',
+  animationDuration: 2000
+}});
+
+
+const res = detectCycles(graph.graph, find_just_one_cycle);
+
+if(res.foundCycle) {
+  document.getElementById("label_output").textContent = ("Found cycles");
+}
+else {
+  document.getElementById("label_output").textContent = ("Found no cycles");
+}
+
+document.getElementById("enumerated_cycles").value = "";
+
+
+// create graph here!
+for( var sc in res.cycles) {
+  var string = "{ ";
+  for ( var vert in res.cycles[sc] ) {
+    string += res.cycles[sc][vert]["vertex"].vertexID;
+    if( res.cycles[sc][vert]["refLabel"] === "#interface_ref") {
+      string += " <~implements~ ";
     }
-  });
-
-
-  const res = detectCycles(graph.graph, find_just_one_cycle);
-
-  if(res.foundCycle) {
-    document.getElementById("label_output").textContent = ("Found cycles");
-  }
-  else {
-    document.getElementById("label_output").textContent = ("Found no cycles");
-  }
-
-  document.getElementById("enumerated_cycles").value = "";
-
-
-  // create graph here!
-  for( var sc in res.cycles) {
-    var string = "{ ";
-    for ( var vert in res.cycles[sc] ) {
-      string += res.cycles[sc][vert]["vertex"].vertexID;
-      if( res.cycles[sc][vert]["refLabel"] === "#interface_ref") {
-        string += " <~implements~ ";
-      }
-      else if (res.cycles[sc][vert]["refLabel"] === "#union_ref") {
-        string += " -union-> ";
-      }
-      else string += " -[" + res.cycles[sc][vert]["refLabel"] + "]-> ";
-      //string += ", ";
+    else if (res.cycles[sc][vert]["refLabel"] === "#union_ref") {
+      string += " -union-> ";
     }
-    string = string.slice(0,-7);
-    string += " }";
-    document.getElementById("enumerated_cycles").value += string + "\n";
+    else string += " -[" + res.cycles[sc][vert]["refLabel"] + "]-> ";
+    //string += ", ";
   }
-  // cytoscape from here and on.
+  string = string.slice(0,-7);
+  string += " }";
+  document.getElementById("enumerated_cycles").value += string + "\n\n";
+}
+
 }
