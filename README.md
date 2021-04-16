@@ -2,6 +2,9 @@
 This repo contains the code of a Web application that allows users to analyze their GraphQL schemas in terms cycles in the network of relationships between types. For the actual detection and enumeration of such cycles, the application uses our [graphql-schema-cycles
 library](https://github.com/LiUGraphQL/graphql-schema-cycles).
 
+This application was developed in the context of a student thesis project described in the following thesis report:
+* K Soames and J Lind: [Detecting Cycles in GraphQL Schemas](http://urn.kb.se/resolve?urn=urn:nbn:se:liu:diva-156174). Bachelor thesis, Linköping University, 2019.
+
 ## Installation
 To clone this repository and its submodules use the command:
 
